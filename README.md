@@ -98,3 +98,12 @@ Allows a new user to **run the project end-to-end** without missing steps.
 - **Scalability check:** Handles small synthetic datasets (`sample.csv`) to large financial datasets (`yfinance` or `sample_large.csv`).  
 
 Demonstrates **both correctness and usability**.
+
+## Results
+
+### Example: AAPL Predictions
+![AAPL Predictions](results/pred_vs_actual_AAPL.png)
+
+### Example: Local Dataset Predictions
+![Local Dataset](results/prediction_plot.png)
+
