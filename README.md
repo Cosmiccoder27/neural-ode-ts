@@ -34,3 +34,67 @@ pip install -r requirements.txt
 ```
 
 3. Run scripts in src/ to preprocess data, train models, and evaluate results.
+
+## Results 
+
+### 1. Data Handling
+- This project works with **any time-series data** (finance, physics, electrical signals).  
+- `src/data.py` handles:
+  - Loading data from CSV
+  - Normalizing values
+  - Splitting into train/test
+  - Creating sliding windows for sequence prediction  
+
+Ensures **standardized input**, allowing the Neural ODE to learn patterns from any sequential data.
+
+---
+
+### 2. Model Training
+- `src/train.py` trains the Neural ODE model on the dataset:
+  - Converts data to PyTorch tensors
+  - Defines the Neural ODE architecture (`src/models/neural_ode.py`)
+  - Optimizes using Adam + MSE loss
+  - Saves the trained model in `results/neural_ode_model.pt`  
+
+Demonstrates the **training pipeline works** and generates a model capable of predicting sequences from new data.
+
+---
+
+### 3. Prediction and Evaluation
+- `view_model.py`, `view_model_yfinance.py`, `view_model_combined.py`:
+  - Loads the trained model
+  - Predicts values on test data
+  - Inverts normalization to original scale
+  - Plots **predicted vs actual curves**
+  - Saves results as PNG for easy visual comparison  
+
+Provides clear evidence of how well the model learned the sequences.
+
+---
+
+### 4. Flexibility
+- Users can:
+  - Download **financial data** from Yahoo Finance (`view_model_yfinance.py`)
+  - Train on **custom local datasets** (`sample_large.csv` or any CSV)
+  - Apply to **electrical signals** or **physics experiments**  
+- Hyperparameters like `window_size`, `hidden_size`, and `epochs` are easily adjustable.
+
+Shows that the project is **general-purpose** for time-series forecasting.
+
+---
+
+### 5. Project Organization
+- `generate_dataset.py` → Generate synthetic datasets quickly for testing  
+- `src/models/` → Contains modular model components (LSTM, ODE functions, latent ODE, etc.)  
+- `results/` → Saves trained model weights and prediction plots  
+
+Allows a new user to **run the project end-to-end** without missing steps.
+
+---
+
+### 6. How Results Are Verified
+- **Visual check:** Prediction plots (`pred_vs_actual_*.png`) show if predicted curves follow actual data.  
+- **Numerical check:** First 10 predicted vs actual values are printed.  
+- **Scalability check:** Handles small synthetic datasets (`sample.csv`) to large financial datasets (`yfinance` or `sample_large.csv`).  
+
+Demonstrates **both correctness and usability**.
