@@ -106,4 +106,21 @@ Demonstrates **both correctness and usability**.
 
 ### Example: Local Dataset Predictions
 ![Local Dataset](results/prediction_plot.png)
+git add README.md
 
+
+## Results
+
+=== First 10 Predictions vs Actual ===
+```
+Predicted: 0.6893  |  Actual: 0.6510
+Predicted: 0.7611  |  Actual: 0.3001
+Predicted: 0.3629  |  Actual: 0.5418
+Predicted: 0.6365  |  Actual: 0.4282
+Predicted: 0.5076  |  Actual: 0.4072
+Predicted: 0.4838  |  Actual: 0.4424
+Predicted: 0.5237  |  Actual: 0.2513
+Predicted: 0.3080  |  Actual: 0.4627
+Predicted: 0.5467  |  Actual: 0.1397
+Predicted: 0.1829  |  Actual: 0.1635
+```
