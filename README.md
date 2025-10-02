@@ -91,6 +91,20 @@ Shows that the project is **general-purpose** for time-series forecasting.
 Allows a new user to **run the project end-to-end** without missing steps.
 
 ---
+### 6. Results
+- `view_model.py`:
+- **Purpose:** Test the trained Neural ODE model on a local dataset (like sample_large.csv) with 1000 rows.
+- **Plot:** Predicted vs Actual for the first 100 (or all) time steps of your local data.
+- `view_model_yfinance.py`:
+- **Purpose:** Test the trained model specifically on financial stock data downloaded from Yahoo Finance.
+- **Plot:** Downloads stock prices for a specific ticker (like AAPL) using yfinance.
+- `view_model_combined.py`:
+- **Purpose** Flexible script that can either:
+
+              Use Yahoo Finance data (USE_YFINANCE=True), OR
+
+              Use local dataset (USE_YFINANCE=False) 
+- **Plot** Compares Predicted vs Actual and saves a distinct file to avoid overwriting the previous plots.
 
 ### 6. How Results Are Verified
 - **Visual check:** Prediction plots (`pred_vs_actual_*.png`) show if predicted curves follow actual data.  
