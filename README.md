@@ -104,10 +104,6 @@ Demonstrates **both correctness and usability**.
 ### Example: AAPL Predictions
 ![AAPL Predictions](results/pred_vs_actual_AAPL.png)
 
-### Example: Local Dataset Predictions
-![Local Dataset](results/prediction_plot.png)
-git add README.md
-
 
 ## Results
 
